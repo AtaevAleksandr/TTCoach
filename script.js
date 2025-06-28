@@ -191,11 +191,21 @@ if (heroSection) {
 // Модальное окно с реквизитами
 const modal = document.getElementById('requisitesModal');
 const requisitesBtn = document.getElementById('requisitesBtn');
+const requisitesFooterBtn = document.getElementById('requisitesFooterBtn');
 const closeModal = document.getElementById('closeModal');
 
 // Открытие модального окна
 if (requisitesBtn) {
     requisitesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+    });
+}
+
+// Открытие модального окна из футера
+if (requisitesFooterBtn) {
+    requisitesFooterBtn.addEventListener('click', (e) => {
         e.preventDefault();
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
