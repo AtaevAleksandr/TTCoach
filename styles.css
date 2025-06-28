@@ -89,6 +89,15 @@ body {
     font-size: 28px;
 }
 
+.logo-image {
+    height: 35px;
+    width: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e74c3c;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -1552,6 +1561,10 @@ section {
     
     .nav-logo {
         font-size: 20px;
+    }
+    
+    .nav-logo .logo-image {
+        height: 28px;
     }
     
     .requisites-card {
