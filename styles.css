@@ -161,14 +161,15 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
 }
 
 .title-accent {
-    background: linear-gradient(135deg, #ffd89b, #19547b);
+    background: linear-gradient(135deg, #ffe066, #1e90ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -178,12 +179,14 @@ body {
     font-size: 1.2rem;
     margin-bottom: 30px;
     opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-buttons {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .btn {
@@ -222,55 +225,265 @@ body {
     transform: translateY(-2px);
 }
 
-.hero-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.hero-card:hover {
-    transform: translateY(-10px);
-}
-
-.profile-image i {
-    font-size: 80px;
-    color: #ffd89b;
-    margin-bottom: 20px;
-}
-
-.hero-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.hero-card p {
-    opacity: 0.8;
-    margin-bottom: 30px;
-}
-
-.stats {
+/* Новые стили для визуальной части */
+.hero-visual {
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 30px;
+    animation: fadeInRight 1s ease-out 0.6s both;
 }
 
-.stat {
-    text-align: center;
+/* Статистика клуба */
+.hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    animation: slideInRight 0.8s ease-out var(--delay, 0s) both;
+}
+
+.stat-card:nth-child(1) { --delay: 0.8s; }
+.stat-card:nth-child(2) { --delay: 1s; }
+.stat-card:nth-child(3) { --delay: 1.2s; }
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
 }
 
 .stat-number {
-    display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: #ffd89b;
+    color: #ffe066;
 }
 
 .stat-label {
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+/* Плавающие декоративные элементы */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 230, 102, 0.3);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-ball-1 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.floating-ball-2 {
+    top: 60%;
+    right: 20%;
+    animation-delay: 2s;
+    width: 15px;
+    height: 15px;
+}
+
+.floating-ball-3 {
+    top: 40%;
+    right: 5%;
+    animation-delay: 4s;
+    width: 25px;
+    height: 25px;
+}
+
+.floating-racket {
+    position: absolute;
+    top: 70%;
+    right: 15%;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    animation: floatRotate 8s ease-in-out infinite;
+}
+
+/* Информационные карточки */
+.info-cards {
+    display: flex;
+    gap: 15px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    flex: 1;
+    animation: fadeInUp 1s ease-out 1.4s both;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: #ffe066;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.info-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.info-card p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Анимированный фон */
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bg-shape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    animation: moveBackground 20s linear infinite;
+}
+
+.shape-1 {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    left: -100px;
+    animation-duration: 25s;
+}
+
+.shape-2 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    right: -75px;
+    animation-duration: 30s;
+    animation-direction: reverse;
+}
+
+.shape-3 {
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+    left: 30%;
+    animation-duration: 35s;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes floatRotate {
+    0%, 100% {
+        transform: rotate(-45deg) translateY(0px);
+    }
+    50% {
+        transform: rotate(-45deg) translateY(-15px);
+    }
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translateX(-100px) translateY(-100px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(100px) translateY(100px) rotate(360deg);
+    }
 }
 
 /* Секции */
@@ -617,45 +830,65 @@ section {
     line-height: 1.7;
 }
 
-.donate-buttons {
+.donate-card-info {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
-.btn-donate {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    padding: 15px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.card-display {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+    max-width: 400px;
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
-.btn-donate:hover {
-    background: white;
-    color: #667eea;
-    transform: translateY(-2px);
+.card-display:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.donate-info {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    flex-shrink: 0;
 }
 
-.donate-info p {
+.card-details h3 {
+    font-size: 1.3rem;
     margin-bottom: 10px;
-    font-size: 0.9rem;
+    color: white;
+    font-weight: 600;
 }
+
+.card-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffe066;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
 
 /* Футер */
 .footer {
@@ -781,6 +1014,40 @@ section {
         gap: 30px;
     }
     
+    .hero-visual {
+        order: -1;
+    }
+    
+    .hero-stats {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    
+    .stat-card {
+        min-width: 200px;
+        flex-shrink: 0;
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .info-cards {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .info-card {
+        padding: 15px;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
@@ -799,9 +1066,15 @@ section {
         text-align: center;
     }
     
-    .donate-buttons {
+    .card-display {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    
+    .card-number {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
     }
     
     .hero-buttons {
@@ -824,9 +1097,14 @@ section {
         font-size: 2rem;
     }
     
-    .hero-card,
     .contact-form,
-    .donate-card {
-        padding: 30px 20px;
+    .donate-card,
+    .card-display {
+        padding: 20px 15px;
+    }
+    
+    .card-number {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
     }
 } 
