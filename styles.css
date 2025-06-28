@@ -5,6 +5,38 @@
     box-sizing: border-box;
 }
 
+/* Убираем автоматические ссылки браузера */
+a[href^="tel:"], 
+a[href^="mailto:"],
+.requisites-number,
+.requisites-value {
+    color: inherit !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    -webkit-text-decoration-color: transparent !important;
+    text-decoration-color: transparent !important;
+}
+
+/* Предотвращаем автоматическое распознавание телефонов */
+.requisites-value {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.requisites-number {
+    user-select: all !important;
+    -webkit-user-select: all !important;
+    -moz-user-select: all !important;
+    -ms-user-select: all !important;
+    pointer-events: all !important;
+    -webkit-touch-callout: default;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -974,11 +1006,14 @@ section {
 .requisites-number {
     font-family: 'Courier New', monospace;
     font-weight: 600;
-    color: #e74c3c;
+    color: #e74c3c !important;
     user-select: all;
     -webkit-user-select: all;
     -moz-user-select: all;
     -ms-user-select: all;
+    text-decoration: none !important;
+    border: none !important;
+    background: none !important;
 }
 
 .requisites-note {
@@ -1133,6 +1168,15 @@ section {
         text-align: center;
         gap: 30px;
         padding: 0 15px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        display: block;
     }
     
     .hero-visual {
@@ -1171,9 +1215,13 @@ section {
     }
     
     .hero-title {
-        font-size: 2rem;
-        margin-bottom: 15px;
-        line-height: 1.3;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        font-weight: 800;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        display: block !important;
+        visibility: visible !important;
     }
     
     .hero-description {
@@ -1336,8 +1384,11 @@ section {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 1.8rem;
-        line-height: 1.2;
+        font-size: 1.9rem;
+        line-height: 1.1;
+        font-weight: 900;
+        margin-bottom: 18px;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
     }
     
     .section-title {
