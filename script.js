@@ -101,7 +101,7 @@ if (contactForm) {
 ${message ? `💬 Сообщение: ${message}` : ''}`;
         
         // Создание ссылки для WhatsApp (замените номер на свой)
-        const whatsappUrl = `https://wa.me/79669349966?text=${encodeURIComponent(text)}`;
+        const whatsappUrl = `https://wa.me/79218988574?text=${encodeURIComponent(text)}`;
         
         // Открытие WhatsApp
         window.open(whatsappUrl, '_blank');
