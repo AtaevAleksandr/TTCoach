@@ -198,38 +198,16 @@ body {
     line-height: 1.2;
     margin-bottom: 20px;
     animation: fadeInUp 1s ease-out;
+    color: white;
+    display: block;
+    visibility: visible;
 }
 
 .title-accent {
-    /* Fallback цвет для браузеров без поддержки градиентов */
     color: #ffe066;
-    background: linear-gradient(135deg, #ffe066, #1e90ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    
-    /* Обеспечиваем видимость на всех устройствах */
-    display: inline-block;
-    font-weight: inherit;
-}
-
-/* Исправление для браузеров без поддержки background-clip */
-@supports not (-webkit-background-clip: text) {
-    .title-accent {
-        color: #ffe066 !important;
-        background: none !important;
-        -webkit-text-fill-color: #ffe066 !important;
-    }
-}
-
-/* Исправление для мобильных браузеров */
-@media (max-width: 768px) {
-    .title-accent {
-        color: #ffe066 !important;
-        -webkit-text-fill-color: #ffe066 !important;
-        background: none !important;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: inline;
 }
 
 .hero-description {
@@ -1156,6 +1134,23 @@ section {
     opacity: 0.7;
 }
 
+/* Принудительная видимость заголовка на всех устройствах */
+.hero-title, .hero-title * {
+    color: white !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.title-accent {
+    color: #ffe066 !important;
+    -webkit-text-fill-color: #ffe066 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .hamburger {
@@ -1247,6 +1242,16 @@ section {
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         display: block !important;
         visibility: visible !important;
+        color: white !important;
+    }
+    
+    .hero-title .title-accent {
+        color: #ffe066 !important;
+        font-weight: 800 !important;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6) !important;
+        -webkit-text-fill-color: #ffe066 !important;
+        background: none !important;
+        display: inline !important;
     }
     
     .hero-description {
@@ -1399,6 +1404,15 @@ section {
     
     .hero-title {
         font-size: 1.9rem;
+        color: white !important;
+    }
+    
+    .hero-title .title-accent {
+        color: #ffe066 !important;
+        -webkit-text-fill-color: #ffe066 !important;
+        background: none !important;
+        font-weight: 800 !important;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7) !important;
     }
     
     .card-number {
@@ -1414,6 +1428,19 @@ section {
         font-weight: 900;
         margin-bottom: 18px;
         text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        color: white !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    .hero-title .title-accent {
+        color: #ffe066 !important;
+        font-weight: 900 !important;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8) !important;
+        -webkit-text-fill-color: #ffe066 !important;
+        background: none !important;
+        display: inline !important;
+        opacity: 1 !important;
     }
     
     .section-title {
@@ -1493,4 +1520,26 @@ section {
     .requisites-number {
         font-size: 0.8rem;
     }
+}
+
+/* КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ - ЗАГОЛОВОК ДОЛЖЕН БЫТЬ ВИДЕН! */
+.hero-title {
+    color: white !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.hero-title .title-accent,
+.title-accent {
+    color: #ffe066 !important;
+    -webkit-text-fill-color: #ffe066 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-weight: 800 !important;
 } 
