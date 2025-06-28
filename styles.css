@@ -201,10 +201,35 @@ body {
 }
 
 .title-accent {
+    /* Fallback цвет для браузеров без поддержки градиентов */
+    color: #ffe066;
     background: linear-gradient(135deg, #ffe066, #1e90ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    
+    /* Обеспечиваем видимость на всех устройствах */
+    display: inline-block;
+    font-weight: inherit;
+}
+
+/* Исправление для браузеров без поддержки background-clip */
+@supports not (-webkit-background-clip: text) {
+    .title-accent {
+        color: #ffe066 !important;
+        background: none !important;
+        -webkit-text-fill-color: #ffe066 !important;
+    }
+}
+
+/* Исправление для мобильных браузеров */
+@media (max-width: 768px) {
+    .title-accent {
+        color: #ffe066 !important;
+        -webkit-text-fill-color: #ffe066 !important;
+        background: none !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .hero-description {
