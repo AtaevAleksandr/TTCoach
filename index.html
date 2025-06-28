@@ -23,7 +23,7 @@
                 <li><a href="#services" class="nav-link">Услуги</a></li>
                 <li><a href="#achievements" class="nav-link">Достижения</a></li>
                 <li><a href="#contact" class="nav-link">Контакты</a></li>
-                <li><a href="#requisites" class="nav-link">Реквизиты</a></li>
+                <li><a href="#" id="requisitesBtn" class="nav-link">Реквизиты</a></li>
                 <li><a href="#donate" class="nav-link donate-btn">Поддержать</a></li>
             </ul>
             <div class="hamburger">
@@ -285,21 +285,20 @@
         </div>
     </section>
 
-    <!-- Реквизиты -->
-    <section id="requisites" class="requisites">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Реквизиты для оплаты</h2>
-                <p class="section-subtitle">Банковские реквизиты для оплаты групповых тренировок</p>
+    <!-- Модальное окно с реквизитами -->
+    <div id="requisitesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Реквизиты для оплаты</h2>
+                <span class="modal-close" id="closeModal">&times;</span>
             </div>
-            
-            <div class="requisites-content">
+            <div class="modal-body">
                 <div class="requisites-card">
                     <div class="requisites-icon">
                         <i class="fas fa-university"></i>
                     </div>
                     <h3>Банковские реквизиты</h3>
-                    <p>Для оплаты групповых тренировок используйте следующие реквизиты:</p>
+                    <p>Для оплаты тренировок используйте следующие реквизиты:</p>
                     
                     <div class="requisites-info">
                         <div class="requisites-row">
@@ -350,12 +349,12 @@
                     
                     <div class="requisites-note">
                         <i class="fas fa-info-circle"></i>
-                        <p>Данные реквизиты предназначены для оплаты групповых тренировок. При переводе укажите в назначении платежа "Оплата за тренировки" и ваше имя.</p>
+                        <p>Данные реквизиты предназначены для оплаты тренировок. При переводе укажите в назначении платежа "Оплата за тренировки" и ваше имя.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Донат -->
     <section id="donate" class="donate">
@@ -405,7 +404,6 @@
                         <li><a href="#about">О нас</a></li>
                         <li><a href="#services">Услуги</a></li>
                         <li><a href="#contact">Контакты</a></li>
-                        <li><a href="#requisites">Реквизиты</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">

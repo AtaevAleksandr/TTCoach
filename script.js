@@ -188,6 +188,44 @@ if (heroSection) {
     heroObserver.observe(heroSection);
 }
 
+// Модальное окно с реквизитами
+const modal = document.getElementById('requisitesModal');
+const requisitesBtn = document.getElementById('requisitesBtn');
+const closeModal = document.getElementById('closeModal');
+
+// Открытие модального окна
+if (requisitesBtn) {
+    requisitesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+    });
+}
+
+// Закрытие модального окна по крестику
+if (closeModal) {
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Возвращаем прокрутку
+    });
+}
+
+// Закрытие модального окна по клику на фон
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Закрытие модального окна по ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
 // Добавление активного класса для навигации
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
