@@ -763,6 +763,10 @@ section {
     font-size: 1.3rem;
 }
 
+.contact-icon.whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e) !important;
+}
+
 .contact-card h3 {
     font-size: 1.1rem;
     margin-bottom: 10px;
@@ -784,6 +788,14 @@ section {
 
 .contact-link:hover {
     color: #2980b9;
+}
+
+.contact-link.whatsapp-link {
+    color: #25d366 !important;
+}
+
+.contact-link.whatsapp-link:hover {
+    color: #128c7e !important;
 }
 
 .contact-form {
@@ -932,8 +944,6 @@ section {
     -moz-user-select: all;
     -ms-user-select: all;
 }
-
-
 
 /* Реквизиты */
 .requisites {
@@ -1131,6 +1141,20 @@ section {
 .social-links a:hover {
     background: #e74c3c;
     transform: translateY(-2px);
+}
+
+.social-links a.vk {
+    background: #34495e !important;
+}
+.social-links a.vk:hover {
+    background: #4a76a8 !important;
+}
+
+.social-links a[href*="youtube"] {
+    background: #e74c3c !important;
+}
+.social-links a[href*="youtube"]:hover {
+    background: #e74c3c !important;
 }
 
 .footer-bottom {
@@ -1497,6 +1521,18 @@ section {
     .card-number {
         font-size: 1.1rem;
         letter-spacing: 1.5px;
+    }
+    .social-links a.vk {
+        background: #4a76a8 !important;
+    }
+    .social-links a.vk:hover {
+        background: #4a76a8 !important;
+    }
+    .social-links a[href*="youtube"] {
+        background: #e74c3c !important;
+    }
+    .social-links a[href*="youtube"]:hover {
+        background: #e74c3c !important;
     }
 }
 
